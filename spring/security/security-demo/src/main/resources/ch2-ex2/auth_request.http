@@ -1,0 +1,2 @@
+GET https://localhost:8080/hello
+Authorization: Basic am9objoxMjM0NQ== # john:12345 in base64
