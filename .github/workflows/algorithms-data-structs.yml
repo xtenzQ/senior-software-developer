@@ -1,4 +1,4 @@
-name: spring-security-in-action
+name: algorithms-and-data-structures
 
 on:
   workflow_dispatch:
