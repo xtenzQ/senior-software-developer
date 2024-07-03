@@ -84,4 +84,31 @@ public class TwoPointers {
 
         return res;
     }
+
+    /**
+     * Determines if string s is a subsequence of string t.
+     * A subsequence of a string is a sequence of characters that can be obtained
+     * by deleting some (or none) of the characters from the original string,
+     * while maintaining the relative order of the remaining characters.
+     *
+     * @param s the subsequence to check
+     * @param t the string to check against
+     * @return {@code true} if {@code s} is a subsequence of {@code t}, {@code false} otherwise
+     * @implNote This method runs in {@code O(n)} time complexity and {@code O(1)} space complexity,
+     * where {@code n} is the length of {@code t}.
+     * @see <a href="https://leetcode.com/problems/is-subsequence/">392. Is Subsequence</a>
+     */
+    public static boolean isSubsequence(String s, String t) {
+        int i = 0, j = 0;
+
+        while (i < s.length() && j < t.length()) {
+            if (s.charAt(i) == t.charAt(j)) {
+                i++;
+            }
+            j++;
+        }
+
+        return i == s.length();
+    }
 }
+

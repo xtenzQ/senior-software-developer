@@ -2,6 +2,7 @@ package com.xtenzq.arrays;
 
 import org.junit.jupiter.api.Test;
 
+import static com.xtenzq.arrays.TwoPointers.isSubsequence;
 import static com.xtenzq.arrays.TwoPointers.canBeSummed;
 import static com.xtenzq.arrays.TwoPointers.isPalindrome;
 import static com.xtenzq.arrays.TwoPointers.mergeSortedArrays;
@@ -12,12 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class TwoPointersTest {
 
     @Test
-    void testEmptyString() {
+    void testEmptyStringPalindrome() {
         assertTrue(isPalindrome(""));
     }
 
     @Test
-    void testSingleCharacter() {
+    void testSingleCharacterPalindrome() {
         assertTrue(isPalindrome("a"));
     }
 
@@ -57,14 +58,14 @@ class TwoPointersTest {
     }
 
     @Test
-    void testEmptyArray() {
+    void testEmptyArrayTwoSum() {
         int[] array = {};
         int target = 5;
         assertFalse(canBeSummed(array, target));
     }
 
     @Test
-    void testSingleElementArray() {
+    void testSingleElementArrayTwoSum() {
         int[] array = {5};
         int target = 5;
         assertFalse(canBeSummed(array, target));
@@ -188,5 +189,96 @@ class TwoPointersTest {
         int[] arr2 = {1, 1, 1};
         int[] expected = {1, 1, 1, 1, 1, 1};
         assertArrayEquals(expected, mergeSortedArrays(arr1, arr2));
+    }
+
+    @Test
+    void testEmptySubsequence() {
+        String s = "";
+        String t = "abc";
+        assertTrue(isSubsequence(s, t));
+    }
+
+    @Test
+    void testEmptyStringSubsequence() {
+        String s = "abc";
+        String t = "";
+        assertFalse(isSubsequence(s, t));
+    }
+
+    @Test
+    void testSubsequenceAtStart() {
+        String s = "abc";
+        String t = "abcdef";
+        assertTrue(isSubsequence(s, t));
+    }
+
+    @Test
+    void testSubsequenceAtEnd() {
+        String s = "def";
+        String t = "abcdef";
+        assertTrue(isSubsequence(s, t));
+    }
+
+    @Test
+    void testSubsequenceInMiddle() {
+        String s = "bdf";
+        String t = "abcdef";
+        assertTrue(isSubsequence(s, t));
+    }
+
+    @Test
+    void testNonSubsequence() {
+        String s = "aec";
+        String t = "abcde";
+        assertFalse(isSubsequence(s, t));
+    }
+
+    @Test
+    void testIdenticalStrings() {
+        String s = "abc";
+        String t = "abc";
+        assertTrue(isSubsequence(s, t));
+    }
+
+    @Test
+    void testSingleCharacterMatch() {
+        String s = "a";
+        String t = "a";
+        assertTrue(isSubsequence(s, t));
+    }
+
+    @Test
+    void testSingleCharacterNonMatch() {
+        String s = "a";
+        String t = "b";
+        assertFalse(isSubsequence(s, t));
+    }
+
+    @Test
+    void testSubsequenceWithRepeatedCharacters() {
+        String s = "aaa";
+        String t = "aaabbb";
+        assertTrue(isSubsequence(s, t));
+    }
+
+    @Test
+    void testNonSubsequenceWithRepeatedCharacters() {
+        String s = "aaa";
+        String t = "ababab";
+        assertTrue(isSubsequence(s, t));
+    }
+
+    @Test
+    void testInterleavedSubsequence() {
+        String s = "ace";
+        String t = "abcde";
+        assertTrue(isSubsequence(s, t));
+    }
+
+    @Test
+    void testInterleavedNonSubsequence() {
+        String s = "aec";
+        String t = "abcde";
+        assertFalse(isSubsequence(s, t));
     }
 }
