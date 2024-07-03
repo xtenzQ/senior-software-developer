@@ -46,4 +46,42 @@ public class TwoPointers {
         }
         return false;
     }
+
+    /**
+     * Merges two sorted arrays into one sorted array.
+     *
+     * @param arr1 the first sorted array
+     * @param arr2 the second sorted array
+     * @return a new sorted array containing all elements from both input arrays
+     * @implNote This method runs in {@code O(n + m)} time complexity and {@code O(1)} space complexity,
+     * where {@code n} is the length of {@code arr1} and {@code m} is the length of {@code arr2}.
+     */
+    public static int[] mergeSortedArrays(int[] arr1, int[] arr2) {
+        int[] res = new int[arr1.length + arr2.length];
+        int i = 0, j = 0, k = 0;
+        while (i < arr1.length && j < arr2.length) {
+            if (arr1[i] < arr2[j]) {
+                res[k] = arr1[i];
+                i++;
+            } else {
+                res[k] = arr2[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < arr1.length) {
+            res[k] = arr1[i];
+            i++;
+            k++;
+        }
+
+        while (j < arr2.length) {
+            res[k] = arr2[j];
+            j++;
+            k++;
+        }
+
+        return res;
+    }
 }
