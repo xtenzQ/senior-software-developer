@@ -2,8 +2,12 @@ package com.xtenzq.arrays;
 
 import org.junit.jupiter.api.Test;
 
-import static com.xtenzq.arrays.TwoPointers.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static com.xtenzq.arrays.TwoPointers.canBeSummed;
+import static com.xtenzq.arrays.TwoPointers.isPalindrome;
+import static com.xtenzq.arrays.TwoPointers.mergeSortedArrays;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TwoPointersTest {
 
