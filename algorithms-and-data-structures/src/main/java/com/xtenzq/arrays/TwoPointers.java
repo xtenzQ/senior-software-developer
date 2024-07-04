@@ -129,5 +129,29 @@ public class TwoPointers {
             j--;
         }
     }
+
+    /**
+     * Given an integer array sorted in non-decreasing order, returns an array of the squares of each number sorted in non-decreasing order.
+     *
+     * @param nums the sorted integer array
+     * @return a new array containing the squares of each number from the input array, sorted in non-decreasing order
+     * @implNote This method runs in {@code O(n)} time complexity and {@code O(n)} space complexity,
+     * where {@code n} is the length of {@code nums}.
+     * @see <a href="https://leetcode.com/problems/squares-of-a-sorted-array/">977. Squares of a Sorted Array</a>
+     */
+    public static int[] sortedSquares(int[] nums) {
+        int i = 0, j = nums.length - 1, k = nums.length - 1;
+        int[] ans = new int[nums.length];
+        while (i <= j) {
+            if (nums[i] * nums[i] < nums[j] * nums[j]) {
+                ans[k--] = nums[j] * nums[j];
+                j--;
+            } else {
+                ans[k--] = nums[i] * nums[i];
+                i++;
+            }
+        }
+        return ans;
+    }
 }
 

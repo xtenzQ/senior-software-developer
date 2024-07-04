@@ -7,6 +7,7 @@ import static com.xtenzq.arrays.TwoPointers.canBeSummed;
 import static com.xtenzq.arrays.TwoPointers.isPalindrome;
 import static com.xtenzq.arrays.TwoPointers.mergeSortedArrays;
 import static com.xtenzq.arrays.TwoPointers.reverseString;
+import static com.xtenzq.arrays.TwoPointers.sortedSquares;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -329,5 +330,54 @@ class TwoPointersTest {
         char[] expected = {'%', '$', '#', '@', '!'};
         reverseString(input);
         assertArrayEquals(expected, input);
+    }
+
+    @Test
+    void testSortedSquares_AllPositive() {
+        int[] nums = {1, 2, 3, 4, 5};
+        int[] expected = {1, 4, 9, 16, 25};
+        assertArrayEquals(expected, sortedSquares(nums));
+    }
+
+    @Test
+    void testSortedSquares_AllNegative() {
+        int[] nums = {-5, -4, -3, -2, -1};
+        int[] expected = {1, 4, 9, 16, 25};
+        assertArrayEquals(expected, sortedSquares(nums));
+    }
+
+    @Test
+    void testSortedSquares_MixedPositiveNegative() {
+        int[] nums = {-4, -1, 0, 3, 10};
+        int[] expected = {0, 1, 9, 16, 100};
+        assertArrayEquals(expected, sortedSquares(nums));
+    }
+
+    @Test
+    void testSortedSquares_SingleElement() {
+        int[] nums = {5};
+        int[] expected = {25};
+        assertArrayEquals(expected, sortedSquares(nums));
+    }
+
+    @Test
+    void testSortedSquares_EmptyArray() {
+        int[] nums = {};
+        int[] expected = {};
+        assertArrayEquals(expected, sortedSquares(nums));
+    }
+
+    @Test
+    void testSortedSquares_AllZeros() {
+        int[] nums = {0, 0, 0, 0, 0};
+        int[] expected = {0, 0, 0, 0, 0};
+        assertArrayEquals(expected, sortedSquares(nums));
+    }
+
+    @Test
+    void testSortedSquares_MixedPositiveNegativeDuplicates() {
+        int[] nums = {-7, -3, 2, 3, 11};
+        int[] expected = {4, 9, 9, 49, 121};
+        assertArrayEquals(expected, sortedSquares(nums));
     }
 }
