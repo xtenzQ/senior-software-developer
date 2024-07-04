@@ -6,6 +6,7 @@ import static com.xtenzq.arrays.TwoPointers.isSubsequence;
 import static com.xtenzq.arrays.TwoPointers.canBeSummed;
 import static com.xtenzq.arrays.TwoPointers.isPalindrome;
 import static com.xtenzq.arrays.TwoPointers.mergeSortedArrays;
+import static com.xtenzq.arrays.TwoPointers.reverseString;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -280,5 +281,53 @@ class TwoPointersTest {
         String s = "aec";
         String t = "abcde";
         assertFalse(isSubsequence(s, t));
+    }
+
+    @Test
+    void testReverseStringWithEvenNumberOfCharacters() {
+        char[] input = {'h', 'e', 'l', 'l', 'o'};
+        char[] expected = {'o', 'l', 'l', 'e', 'h'};
+        reverseString(input);
+        assertArrayEquals(expected, input);
+    }
+
+    @Test
+    void testReverseStringWithOddNumberOfCharacters() {
+        char[] input = {'a', 'b', 'c', 'd', 'e'};
+        char[] expected = {'e', 'd', 'c', 'b', 'a'};
+        reverseString(input);
+        assertArrayEquals(expected, input);
+    }
+
+    @Test
+    void testReverseStringWithSingleCharacter() {
+        char[] input = {'a'};
+        char[] expected = {'a'};
+        reverseString(input);
+        assertArrayEquals(expected, input);
+    }
+
+    @Test
+    void testReverseStringWithEmptyArray() {
+        char[] input = {};
+        char[] expected = {};
+        reverseString(input);
+        assertArrayEquals(expected, input);
+    }
+
+    @Test
+    void testReverseStringWithRepeatedCharacters() {
+        char[] input = {'a', 'a', 'a', 'a'};
+        char[] expected = {'a', 'a', 'a', 'a'};
+        reverseString(input);
+        assertArrayEquals(expected, input);
+    }
+
+    @Test
+    void testReverseStringWithSpecialCharacters() {
+        char[] input = {'!', '@', '#', '$', '%'};
+        char[] expected = {'%', '$', '#', '@', '!'};
+        reverseString(input);
+        assertArrayEquals(expected, input);
     }
 }

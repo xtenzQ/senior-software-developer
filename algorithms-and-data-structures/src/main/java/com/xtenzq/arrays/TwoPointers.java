@@ -110,5 +110,24 @@ public class TwoPointers {
 
         return i == s.length();
     }
+
+    /**
+     * Reverses the input array of characters in-place.
+     *
+     * @param s the array of characters to be reversed
+     * @implNote This method runs in {@code O(n)} time complexity and {@code O(1)} space complexity,
+     * where {@code n} is the length of {@code s}.
+     * @see <a href="https://leetcode.com/problems/reverse-string/">344. Reverse String</a>
+     */
+    public static void reverseString(char[] s) {
+        int i = 0, j = s.length - 1;
+        while (i < j) {
+            var temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+            i++;
+            j--;
+        }
+    }
 }
 
