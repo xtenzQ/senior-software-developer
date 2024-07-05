@@ -2,8 +2,9 @@ package com.xtenzq.arrays;
 
 import org.junit.jupiter.api.Test;
 
+import static com.xtenzq.arrays.SlidingWindow.findLongestSubstringAfterOneFlip;
 import static com.xtenzq.arrays.SlidingWindow.findLongestSubArraySumLessOrEqualK;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SlidingWindowTest {
 
@@ -47,5 +48,59 @@ class SlidingWindowTest {
         int[] nums = {};
         int k = 5;
         assertEquals(0, findLongestSubArraySumLessOrEqualK(nums, k));
+    }
+
+    @Test
+    void testFindLongestSubstringAfterOneFlip_Example1() {
+        String s = "1101100111";
+        assertEquals(5, findLongestSubstringAfterOneFlip(s));
+    }
+
+    @Test
+    void testFindLongestSubstringAfterOneFlip_AllOnes() {
+        String s = "1111111";
+        assertEquals(7, findLongestSubstringAfterOneFlip(s));
+    }
+
+    @Test
+    void testFindLongestSubstringAfterOneFlip_AllZeros() {
+        String s = "00000";
+        assertEquals(1, findLongestSubstringAfterOneFlip(s));
+    }
+
+    @Test
+    void testFindLongestSubstringAfterOneFlip_SingleZero() {
+        String s = "1";
+        assertEquals(1, findLongestSubstringAfterOneFlip(s));
+    }
+
+    @Test
+    void testFindLongestOneBinaryString_SingleSubstringAfterOne() {
+        String s = "0";
+        assertEquals(1, findLongestSubstringAfterOneFlip(s));
+    }
+
+    @Test
+    void testFindLongestSubstringAfterOneFlip_AlternateOnesAndZeros() {
+        String s = "1010101010";
+        assertEquals(3, findLongestSubstringAfterOneFlip(s));
+    }
+
+    @Test
+    void testFindLongestSubstringAfterOneFlip_LeadingZeros() {
+        String s = "000011110000";
+        assertEquals(5, findLongestSubstringAfterOneFlip(s));
+    }
+
+    @Test
+    void testFindLongestSubstringAfterOneFlip_TrailingZeros() {
+        String s = "11110000";
+        assertEquals(5, findLongestSubstringAfterOneFlip(s));
+    }
+
+    @Test
+    void testFindLongestSubstringAfterOneFlip_ComplexPattern() {
+        String s = "100110111001111";
+        assertEquals(6, findLongestSubstringAfterOneFlip(s));
     }
 }
