@@ -23,4 +23,31 @@ public class SlidingWindow {
         }
         return answer;
     }
+
+    /**
+     * Finds the length of the longest substring of "1"s in a binary string after flipping at most one "0" to "1".
+     *
+     * @param s the binary string consisting of '0' and '1'
+     * @return the length of the longest substring achievable that contains only '1's after flipping at most one '0'
+     * @implNote This method runs in {@code O(n)} time complexity and {@code O(1)} space complexity,
+     * where {@code n} is the length of {@code s}.
+     */
+    public static int findLongestSubstringAfterOneFlip(String s) {
+        int left = 0, answer = 0, zeroCounter = 0;
+        for (int right = 0; right < s.length(); right++) {
+            if (s.charAt(right) == '0') {
+                zeroCounter++;
+            }
+
+            while (zeroCounter > 1) {
+                if (s.charAt(left) == '0') {
+                    zeroCounter--;
+                }
+                left++;
+            }
+
+            answer = Math.max(answer, right - left + 1);
+        }
+        return answer;
+    }
 }
