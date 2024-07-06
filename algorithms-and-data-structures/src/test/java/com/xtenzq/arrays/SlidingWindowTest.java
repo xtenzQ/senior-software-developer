@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.xtenzq.arrays.SlidingWindow.findLongestSubstringAfterOneFlip;
 import static com.xtenzq.arrays.SlidingWindow.findLongestSubArraySumLessOrEqualK;
+import static com.xtenzq.arrays.SlidingWindow.numSubarrayProductLessThanK;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SlidingWindowTest {
@@ -102,5 +103,40 @@ class SlidingWindowTest {
     void testFindLongestSubstringAfterOneFlip_ComplexPattern() {
         String s = "100110111001111";
         assertEquals(6, findLongestSubstringAfterOneFlip(s));
+    }
+
+    @Test
+    void testNumSubarrayProductLessThanK_SubarraysWithProductLessThan100() {
+        int[] nums = {10, 5, 2, 6};
+        int k = 100;
+        assertEquals(8, numSubarrayProductLessThanK(nums, k));
+    }
+
+    @Test
+    void testNumSubarrayProductLessThanK_SubarraysWithProductLessThan0() {
+        int[] nums = {1, 2, 3};
+        int k = 0;
+        assertEquals(0, numSubarrayProductLessThanK(nums, k));
+    }
+
+    @Test
+    void testNumSubarrayProductLessThanK_SubarraysWithProductLessThan1() {
+        int[] nums = {1, 2, 3};
+        int k = 1;
+        assertEquals(0, numSubarrayProductLessThanK(nums, k));
+    }
+
+    @Test
+    void testNumSubarrayProductLessThanK_SubarraysWithProductLessThan10() {
+        int[] nums = {1, 2, 3};
+        int k = 10;
+        assertEquals(6, numSubarrayProductLessThanK(nums, k));
+    }
+
+    @Test
+    void testNumSubarrayProductLessThanK_EmptyArray() {
+        int[] nums = {};
+        int k = 100;
+        assertEquals(0, numSubarrayProductLessThanK(nums, k));
     }
 }

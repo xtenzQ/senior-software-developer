@@ -50,4 +50,35 @@ public class SlidingWindow {
         }
         return answer;
     }
+
+    /**
+     * Returns the number of subarrays where the product of all the elements in the subarray
+     * is strictly less than {@code k}.
+     *
+     * @param nums the array of positive integers
+     * @param k the integer threshold
+     * @return the number of subarrays with product less than {@code k}
+     * @implNote This method runs in {@code O(n)} time complexity and {@code O(1)} space complexity,
+     * where {@code n} is the length of {@code nums}.
+     * @see <a href="https://leetcode.com/problems/subarray-product-less-than-k/">713. Subarray Product Less Than K</a>
+     */
+    public static int numSubarrayProductLessThanK(int[] nums, int k) {
+        if (k <= 1) {
+            return 0;
+        }
+
+        int left = 0, count = 1, answer = 0;
+
+        for (int right = 0; right < nums.length; right++) {
+            count *= nums[right];
+            while (count >= k) {
+                count /= nums[left];
+                left++;
+            }
+
+            answer += right - left + 1;
+        }
+
+        return answer;
+    }
 }
