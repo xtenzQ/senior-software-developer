@@ -3,7 +3,9 @@ package com.xtenzq.arrays;
 import org.junit.jupiter.api.Test;
 
 import static com.xtenzq.arrays.PrefixSum.answerQueries;
+import static com.xtenzq.arrays.PrefixSum.numberOfWaysToSplitArray;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PrefixSumTest {
 
@@ -44,5 +46,26 @@ class PrefixSumTest {
         int limit = 500000;
         boolean[] expected = {false, true};
         assertArrayEquals(expected, answerQueries(nums, queries, limit));
+    }
+
+    @Test
+    void testNumberOfWaysToSplitArray_AllNegative() {
+        int[] nums = {-1, -2, -3, -4, -5};
+        int expected = 3;
+        assertEquals(expected, numberOfWaysToSplitArray(nums));
+    }
+
+    @Test
+    void testNumberOfWaysToSplitArray_SingleElement() {
+        int[] nums = {5};
+        int expected = 0;
+        assertEquals(expected, numberOfWaysToSplitArray(nums));
+    }
+
+    @Test
+    void testNumberOfWaysToSplitArray_TwoElements() {
+        int[] nums = {5, -5};
+        int expected = 1;
+        assertEquals(expected, numberOfWaysToSplitArray(nums));
     }
 }
