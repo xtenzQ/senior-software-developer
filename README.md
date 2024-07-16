@@ -51,5 +51,6 @@ I found this points quite solid. They are taken from [Peter's video](https://www
   <summary><b>Books</b></summary>
 
   - [ ] **Discrete Mathematics with Applications** by SUSANNA S. EPP
+  - [ ] **Working Effectively with Legacy Code** by Michael C. Feathers
   </details>
   
