@@ -62,4 +62,23 @@ public class FastPointers {
         }
         return slow.val;
     }
+
+    /**
+     * Returns the middle node of the linked list
+     *
+     * @param head head of linked list
+     * @return middle node of the linked list
+     * @implNote This method runs in {@code O(n)} time complexity and {@code O(1)} space complexity
+     * @see <a href="https://leetcode.com/problems/middle-of-the-linked-list/">876. Middle of the Linked List</a>
+     */
+    public static ListNode middleNode(ListNode head) {
+        var slow = head;
+        var fast = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        return slow;
+    }
 }
