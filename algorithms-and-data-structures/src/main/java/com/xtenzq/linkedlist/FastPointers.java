@@ -40,4 +40,26 @@ public class FastPointers {
         }
         return false;
     }
+
+    /**
+     * Return the {@code k}-th node from the end of the linked list
+     *
+     * @param head of linked list
+     * @param k element position from the end
+     * @return node value of {@code k}-th node from the end
+     * @implNote This method runs in {@code O(n)} time complexity and {@code O(1)} space complexity
+     */
+    public static int nodeFromEnd(ListNode head, int k) {
+        ListNode slow = head;
+        ListNode fast = head;
+        for (int i = 0; i < k; i++) {
+            fast = fast.next;
+        }
+
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow.val;
+    }
 }

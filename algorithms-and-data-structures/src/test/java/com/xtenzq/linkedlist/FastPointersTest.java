@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.xtenzq.linkedlist.FastPointers.getMiddle;
 import static com.xtenzq.linkedlist.FastPointers.hasCycle;
+import static com.xtenzq.linkedlist.FastPointers.nodeFromEnd;
 import static com.xtenzq.linkedlist.utils.ListNode.buildLinkedList;
 import static com.xtenzq.linkedlist.utils.ListNode.buildLinkedListWithCycle;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -37,5 +38,15 @@ class FastPointersTest {
     @Test
     void hasCycle_case3() {
         assertFalse(hasCycle(buildLinkedListWithCycle(new int[]{1}, -1)));
+    }
+
+    @Test
+    void nodeFromEnd_case1() {
+        assertEquals(4, nodeFromEnd(buildLinkedList(1, 2, 3, 4, 5), 2));
+    }
+
+    @Test
+    void nodeFromEnd_case2() {
+        assertEquals(1, nodeFromEnd(buildLinkedList(1), 1));
     }
 }
