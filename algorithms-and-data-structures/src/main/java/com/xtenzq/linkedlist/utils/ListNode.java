@@ -31,6 +31,34 @@ public class ListNode {
         return head;
     }
 
+    public static ListNode buildLinkedListWithCycle(int[] nums, int cyclePos) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+        if (cyclePos > nums.length - 1 || cyclePos < -1) {
+            throw new IllegalArgumentException("cycle position is out of bound");
+        }
+
+        ListNode head = new ListNode(nums[0]);
+        ListNode current = head;
+        ListNode cycleNode = (cyclePos == 0) ? head : null;
+
+        for (int i = 1; i < nums.length; i++) {
+            current.next = new ListNode(nums[i]);
+            current = current.next;
+            if (i == cyclePos) {
+                cycleNode = current;
+            }
+        }
+
+        if (cyclePos != -1) {
+            current.next = cycleNode;
+        }
+
+        return head;
+    }
+
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
