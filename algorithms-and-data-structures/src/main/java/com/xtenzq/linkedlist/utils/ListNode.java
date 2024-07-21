@@ -18,6 +18,19 @@ public class ListNode {
         this.next = next;
     }
 
+    public static ListNode buildLinkedList(int...nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+        ListNode head = new ListNode(nums[0]);
+        ListNode current = head;
+        for (int i = 1; i < nums.length; i++) {
+            current.next = new ListNode(nums[i]);
+            current = current.next;
+        }
+        return head;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -30,16 +43,17 @@ public class ListNode {
         return val == other.val && (Objects.equals(next, other.next));
     }
 
-    public static ListNode buildLinkedList(int...nums) {
-        if (nums == null || nums.length == 0) {
-            return null;
-        }
-        ListNode head = new ListNode(nums[0]);
-        ListNode current = head;
-        for (int i = 1; i < nums.length; i++) {
-            current.next = new ListNode(nums[i]);
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        ListNode current = this;
+        while (current != null) {
+            sb.append(current.val);
+            if (current.next != null) {
+                sb.append(" -> ");
+            }
             current = current.next;
         }
-        return head;
+        return sb.toString();
     }
 }
