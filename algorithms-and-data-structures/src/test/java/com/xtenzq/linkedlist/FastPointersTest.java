@@ -59,7 +59,7 @@ class FastPointersTest {
 
     @Test
     void middleNode_case2() {
-        assertEquals(buildLinkedList(4, 5, 6), middleNode(buildLinkedList(1, 2, 3, 4, 5, 6)));
+        assertEquals(buildLinkedList(4, 5, 6), middleNode(buildLinkedList(1,2,3,4,5,6)));
     }
 
     @Test
