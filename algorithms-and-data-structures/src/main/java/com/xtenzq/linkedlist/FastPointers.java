@@ -81,4 +81,24 @@ public class FastPointers {
 
         return slow;
     }
+
+    /**
+     * Deletes all duplicates such that each element appears only once
+     *
+     * @param head head of linked list
+     * @return linked list with unique elements
+     * @implNote This method runs in {@code O(n)} time complexity and {@code O(1)} space complexity
+     * @see <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/">83. Remove Duplicates from Sorted List</a>
+     */
+    public static ListNode deleteDuplicates(ListNode head) {
+        ListNode pointer = head;
+        while (pointer != null && pointer.next != null) {
+            if (pointer.val == pointer.next.val) {
+                pointer.next = pointer.next.next;
+            } else {
+                pointer = pointer.next;
+            }
+        }
+        return head;
+    }
 }

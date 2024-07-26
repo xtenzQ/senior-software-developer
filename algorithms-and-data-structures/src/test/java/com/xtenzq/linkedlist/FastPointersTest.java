@@ -2,6 +2,7 @@ package com.xtenzq.linkedlist;
 
 import org.junit.jupiter.api.Test;
 
+import static com.xtenzq.linkedlist.FastPointers.deleteDuplicates;
 import static com.xtenzq.linkedlist.FastPointers.getMiddle;
 import static com.xtenzq.linkedlist.FastPointers.hasCycle;
 import static com.xtenzq.linkedlist.FastPointers.middleNode;
@@ -59,5 +60,20 @@ class FastPointersTest {
     @Test
     void middleNode_case2() {
         assertEquals(buildLinkedList(4, 5, 6), middleNode(buildLinkedList(1,2,3,4,5,6)));
+    }
+
+    @Test
+    void deleteDuplicates_case1() {
+        assertEquals(buildLinkedList(1, 2, 3, 4, 5), deleteDuplicates(buildLinkedList(1, 2, 3, 3, 4, 4, 5)));
+    }
+
+    @Test
+    void deleteDuplicates_case2() {
+        assertEquals(buildLinkedList(1), deleteDuplicates(buildLinkedList(1)));
+    }
+
+    @Test
+    void deleteDuplicates_case3() {
+        assertEquals(buildLinkedList(1), deleteDuplicates(buildLinkedList(1, 1, 1)));
     }
 }
