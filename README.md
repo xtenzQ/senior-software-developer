@@ -1,8 +1,36 @@
+<div align="center">
+
 # Senior Software Developer
 
-My repo made to track my middle-to-senior path in software engineering.
+> this repo is still in progress (WIP)
 
-## Factors
+</div>
+
+My repo made to track my _middle-to-senior_ path in software engineering.
+
+## Roadmap
+
+ Category                  | Topics                                                                                                                                                                                                                                                                                                                                                                                                         |
+|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Data structures           | `Array`, `LinkedList`, `Queue` (Deque), `Stack`, `HashMap`, `Graph`, `Bloom filters`, `Binary tree`, `Binary search tree`, `B-trees`, `Red-black trees`, `Disjoin sets`, `Heaps`, `Van Emde Boas trees`, `Fenwick trees`, `Steiner tree`                                                                                                                                                                                              |
+| Maths                     | Basic probability and statistics, common mathematical series                                                                                                                                                                                                                                                                                                                       |
+| Algorithmic concepts      | Time & space complexities, recurrence relations and master theorem                                                                                                                                                                                                                                                                                                                                             |
+| Algorithms                | All sorting algorithms (quick sort, merge sort, heap sort, insertion sort, bubble sort, counting sort, radix sort), Divide & conquer algorithms, Dynamic programming (top-down, 1-D and 2-D memoization), approximation algorithms, Greedy algorithms, Pattern matching, Recursion and backtracking, NP complexity classes, Game theory related algorithms, Linear programming, basics of randomized algorithms |
+| Operating systems         | Process scheduling, process synchronization and deadlocks, memory management, file system management, user-space processes and threading etc.                                                                                                                                                                                                                                                                  |
+| Databases                 | Relation algebra, Functional decomposition, ER schema design etc.                                                                                                                                                                                                                                                                                                                                              |
+| Database usage            | Concepts (such as ACID, BASE, CAP theorem etc.), Database access patterns, Partitioning, Sharding, NoSQL databases (deep diving into one), Database locking and strategies, Concurrency controls, Database isolation levels, Database transactions, Indexing, full-text search, time series databases, Views / materialized views, replication (WAN replication) etc.                                          |
+| Networks                  | OSI model, HTTP/1.1 and HTTP/2 protocol, web-socket communication, TCP/IP internals, SSL/TLS, Checksums and error-correcting mechanisms                                                                                                                                                                                                                                                                        |
+| Distributed systems       | Two-general's problem, Byzantine failures, Consensus protocols (such as Paxos, Raft etc.), Distributed transactions (2-phase commit, SAGA etc.), Distributed locking, Leader election, Partition tolerance, Distributed state machines, Distributed file systems, Distributed hash-table etc.                                                                                                                  |
+| Compilers                 | Compilation lifecycle, AST, JIT compilation, Key optimizations (such as Tail call optimization)                                                                                                                                                                                                                                                                                                                |
+| OOPS                      | Key design patterns (factory, abstract factory, visitor, singleton, strategy, command etc.), heavy practice on OOPS modelling                                                                                                                                                                                                                                                                                  |
+| Architecture              | Microservices, n-tier (details of MVC, MVVM etc.)                                                                                                                                                                                                                                                                                                                                                              |
+| Microservice Architecture | Orchestration, Choreography, Distributed tracing, reporting, instrumentation, Service discovery and service mesh, API gateways, authentication, Eventing, Common anti-patterns, Security                                                                                                                                                                                                                       |
+| System design             | Requirement collection (functional and non-functional), performance and load budgeting, Caching, Load-balancing, Deployment, Instrumentation, API and message communication, message queues, Logging, Infrastructure management                                                                                                                                                                                |
+| Caching                   | Caching types (L1 cache, in-memory caches, distributed caches, CDN), caching strategies (write-through, write-back etc.), cache boot strategies, Eviction strategies (LRU, MRU etc.), manual management of caches in production                                                                                                                                                                                |
+| Load balancing            | L3, L4, L7 load balancing, API gateway and authentication, SSL termination, request forwarding vs reverse proxy, Load balancing strategies, Direct server return, DNS load balancing, Rate limiting                                                                                                                                                                                                            |
+| Miscellaneous             | Finite state automata, Performance numbers (disk IOPS, network bandwidth, database transaction benchmarks, HTTP server benchmarks), MapReduce, Serialization/Marshalling, Concurrency controls (mutex, semaphores), Lockless data structures, Operational transformation algorithms                                                                                                                            |
+
+# Factors
 
 - **Quality** - you're expected to have solid solutions, sharing knowledge, etc.;
 - **Independence** - you're the person other people seeking out to ask a question;
@@ -11,46 +39,3 @@ My repo made to track my middle-to-senior path in software engineering.
 - **Being able to operate strategically and not just tactically** (strategic thinking and visioning; tend to have impact on
   the project health level, engaging on a high level with project managers, product managers, scoping tickets,
   prioritizing work).
-
-I found this points quite solid. They are taken from [Peter's video](https://www.youtube.com/watch?v=nQEMdSI5o3Y).
-
-## Roadmap
-
-- <details open>
-  <summary><b>Algorithms & Data Structures</b></summary>
-  
-  - [x] **Time and Space complexities**
-  - [x] **Arrays and String** - 07/08/2024 // [Link](algorithms-and-data-structures/src/main/java/com/xtenzq/arrays/) // [PRs](https://github.com/xtenzQ/senior-software-developer/milestone/2)
-  - [ ] **Hashing**: _HashSet_, _HashMap_ - 📚 In Progress // Link // PRs
-  - [ ] **Linked Lists**
-  - [ ] **Stacks and Queues**
-  - [ ] **Trees and Graphs**
-  - [ ] **Heaps**
-  - [ ] **Greedy Algorithms**
-  - [ ] **Binary Search**
-  - [ ] **Backtracking**
-  - [ ] **Dynamic Programming**
-  </details>
-
-- <details open>
-  <summary><b>Maths</b></summary>
-  
-  - [ ] **Discrete Math** - to recall
-  - [ ] **Basic Probability** - to recall
-  - [ ] **Statistics** - to recall
-  - [ ] **Series** - to recall
-  </details>
-
-- <details open>
-  <summary><b>Courses</b></summary>
-
-  - [ ] **[LeetCode's Interview Crash Course Data Structures and Algorithms](https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/)**
-  </details>
-
-- <details open>
-  <summary><b>Books</b></summary>
-
-  - [ ] **Discrete Mathematics with Applications** by SUSANNA S. EPP
-  - [ ] **Working Effectively with Legacy Code** by Michael C. Feathers
-  </details>
-  
