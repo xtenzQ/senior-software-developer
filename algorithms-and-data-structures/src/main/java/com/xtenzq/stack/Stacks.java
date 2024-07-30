@@ -36,4 +36,24 @@ public class Stacks {
         }
         return stack.empty();
     }
+
+    /**
+     * Remove all adjacent duplicates in string
+     *
+     * @param s string to remove duplicates from
+     * @return string without duplicates
+     * @implNote This method runs in {@code O(n)} time and space complexity, where {@code n} is the length of {@code s}.
+     * @see <a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/">1047. Remove All Adjacent Duplicates In String</a>
+     */
+    public static String removeDuplicates(String s) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if (!sb.isEmpty() && sb.charAt(sb.length() - 1) == s.charAt(i)) {
+                sb.deleteCharAt(sb.length() - 1);
+            } else {
+                sb.append(s.charAt(i));
+            }
+        }
+        return sb.toString();
+    }
 }
