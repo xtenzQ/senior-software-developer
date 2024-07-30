@@ -66,6 +66,7 @@ public class Stacks {
      * @return {@code true} if strings are equal, {@code false} otherwise
      * @implNote This method runs in {@code O(n + m} time and space complexity, where {@code n} and {@code m} are
      * the lengths of strings {@code s} and {@code t}
+     * @see <a href="https://leetcode.com/problems/backspace-string-compare/">844. Backspace String Compare</a>
      */
     public static boolean backspaceCompare(String s, String t) {
         Stack<Character> sStack = clearStack(s);
