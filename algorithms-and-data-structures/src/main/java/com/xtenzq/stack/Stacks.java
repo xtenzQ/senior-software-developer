@@ -56,4 +56,32 @@ public class Stacks {
         }
         return sb.toString();
     }
+
+    /**
+     * Given two strings {@code s} and {@code t}, return {@code true} if they are equal when both are typed
+     * into empty text editors. {@code #} means a backspace character.
+     *
+     * @param s first string
+     * @param t second string
+     * @return {@code true} if strings are equal, {@code false} otherwise
+     * @implNote This method runs in {@code O(n + m} time and space complexity, where {@code n} and {@code m} are
+     * the lengths of strings {@code s} and {@code t}
+     */
+    public static boolean backspaceCompare(String s, String t) {
+        Stack<Character> sStack = clearStack(s);
+        Stack<Character> tStack = clearStack(t);
+        return tStack.equals(sStack);
+    }
+
+    private static Stack<Character> clearStack(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != '#') {
+                stack.push(s.charAt(i));
+            } else if (!stack.empty()) {
+                stack.pop();
+            }
+        }
+        return stack;
+    }
 }
