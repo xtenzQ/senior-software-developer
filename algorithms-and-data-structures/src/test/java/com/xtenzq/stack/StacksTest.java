@@ -2,6 +2,7 @@ package com.xtenzq.stack;
 
 import org.junit.jupiter.api.Test;
 
+import static com.xtenzq.stack.Stacks.backspaceCompare;
 import static com.xtenzq.stack.Stacks.isValid;
 import static com.xtenzq.stack.Stacks.removeDuplicates;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -33,5 +34,20 @@ class StacksTest {
     @Test
     void removeDuplicates_test2() {
         assertEquals("ay", removeDuplicates("azxxzy"));
+    }
+
+    @Test
+    void backspaceCompare_case1() {
+        assertTrue(backspaceCompare("ab#c", "ad#c"));
+    }
+
+    @Test
+    void backspaceCompare_case2() {
+        assertTrue(backspaceCompare("ab##", "c#d#"));
+    }
+
+    @Test
+    void backspaceCompare_case3() {
+        assertFalse(backspaceCompare("a#c", "b"));
     }
 }
