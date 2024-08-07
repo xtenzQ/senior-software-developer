@@ -15,6 +15,7 @@ public class BinaryTree {
      * The space complexity of this method is {@code O(h)}, where {@code h} is the height of the binary tree.
      * This is due to the recursion stack. In the worst case, the height of the tree can be {@code n} (in case of a completely skewed tree).
      * Therefore, the space complexity can be considered {@code O(h)} in the worst case and {@code O(log h)} in the best case (for a balanced tree).
+     * @see <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">104. Maximum Depth of Binary Tree</a>
      */
     public static int maxDepth(TreeNode root) {
         if (root == null) {
