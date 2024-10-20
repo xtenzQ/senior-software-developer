@@ -1,6 +1,6 @@
 package com.xtenzq.codeforces
 
-fun main() {
+fun a2030() {
     val t = readln().toInt()
     for (j in 0..< t) {
         val n = readln().toInt()
