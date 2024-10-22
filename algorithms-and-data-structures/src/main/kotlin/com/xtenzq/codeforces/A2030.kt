@@ -14,3 +14,15 @@ fun a2030() {
         println((a.max() - a.min()) * (n - 1))
     }
 }
+
+fun b2030() {
+    val t = readln().toInt()
+    repeat(t) {
+        val n = readln().toInt()
+        print(1)
+        repeat(n - 1) {
+            print(0)
+        }
+        println()
+    }
+}
