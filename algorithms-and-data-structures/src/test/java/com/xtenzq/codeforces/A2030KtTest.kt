@@ -20,4 +20,17 @@ class A2030KtTest {
 
         assert(input, expectedOutput, { a2030() })
     }
+
+    @Test
+    fun `B2030 basic test`() {
+        val input = "3\n" +
+                "1\n" +
+                "2\n" +
+                "3\n"
+        val expectedOutput = "1\n" +
+                "10\n" +
+                "100\n"
+
+        assert(input, expectedOutput, { b2030() })
+    }
 }
